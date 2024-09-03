@@ -1,3 +1,8 @@
 https://www.youtube.com/watch?v=GKY8EXcNGHw&t=13s　より
-CSSのpはパラグラフ
+
+・CSS
+pはパラグラフ（p{)
+ただ、このままではhtmlファイルには反映されない。
+cssをhtmlで使う時はhtml側でcssを読み込ませる指示が必要
+
 
