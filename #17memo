@@ -16,3 +16,48 @@ hrefで場所を指定
 飛ぶ場所
 
 <a>タグには自動的に設定されているスタイルがある
+
+Cssの一番最初に付け加える
+body{
+    margin:0;
+}
+ul{
+    list-style: none;　→いかに出てくるul全てに適応される　・を全部消すよ
+}
+a{
+    color:#666;          →いかに出てくるa全てに適応される　リンクさせる文字の色はグレーだよ
+    text-decoration: none;　                        リンク下に出てくる_を消すよ
+}
+a:hover{　マウスオーバー（マウスを話した時）のスタイル
+    color:#00F　マウスを重ねたときに色が変わる
+}
+ブラウザはCSSファイルを上から読んで、上から再現される
+下に書くもの＝新しい情報、　新しい情報に上書きされていく
+全体で使いそうなルールは最初に書いておく
+
+レイアウトの中に共通性を探すことが大事
+それぞれの枠に名前をつけなくていいので楽になる
+明らかに違う枠には名前を変えておく
+
+
+.lesson{
+    display:flex; →ラッピングした状態、lesson_itemを3つ横並びにしたい　display:flex;は中身を横並びにする
+}
+.lesson_item{
+    width:33%;　→3つを横並び、横幅は100％なので33*3=99%でギリOK 2つなら50%
+    height:500px; 
+    margin-top:100px; →lessonとlesson_itemの間
+    padding:0 15px;
+    text-align:center;
+}
+.lesson_item img{
+    width:300px
+}
+
+margin: 5px 5px 8px 8px
+        ↑   →   ↓   ←   時計回り
+margin: 80px auto 100px
+        ↑    ←→     ↓
+
+HTMLの構文＋CSSを書くことを"コーディング"と呼ぶ
+プログラミングではない！
