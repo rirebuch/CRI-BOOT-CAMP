@@ -1,0 +1,92 @@
+ここまででサイトの枠は完了
+サイトの枠さえできれば、Webサイトのほぼ8割は完了したも同然
+あとは枠の中に「画像」や「テキスト」を入れていくだけ
+枠＝骨組みが完成　ここに壁や屋根などをつけていく感じ
+
+画像をダウンロードして、デスクトップに移動させる
+まずは画像を入れてみよう
+logoのdivにロゴの画像<img　から始まる
+<div class="logo">
+  <img src="./images/cbc_icon.svg" alt=""> ←画像（ロゴアイコン挿入）imgタグ
+  CRI BOOT CAMP                            ←テキスト挿入
+</div>
+このままだと
+ロゴ
+テキスト
+の縦並びになる　ロゴ　テキスト　のように横並びにするためにCSSで
+.logp{ 内にdisplay:flex;　をつけた
+画像を配置するときに使うタグ：imgタグ　単体では使わず、ファイルの場所を指定する属性タグsrcと一緒に使う
+./は同じ階層のフォルダ、という意味
+../は一つ上の階層という意味
+altは画像が見えないときに文字として表示させる　画像を文字で補足させるときのタグ
+（例）コーヒーの画像を入れたい　ロボットからしたら画像がコーヒーかどうかわからない
+　　　読み上げ機能　目の不自由な方　コーヒーの画像かわからない　文字で補足
+　　　
+
+
+.logo{
+  width:200px;　←ロゴの横枠の幅、ロゴの画像の幅ではないので注意
+  color:#52b6ac;
+  font-size:12px;
+  display:flex;　←ロゴとテキストの横並び
+  align-items:center; ←ロゴの横枠内の天地のセンター
+}
+.logo img{　←.クラス タグ名　クラス名の中だけにあるタグ名を指定させる表記
+  width:50px;
+  margin-right:10px;
+}
+
+marginとはどんなプロパティ？
+→要素の外側の余白
+　
+.header{
+  height:150px;
+  margin-bottom:20px; ←header下の外側余白のこと
+  background-color:#d9e021;
+  display: flex;
+  align-items: center;　←天地のセンター
+}
+
+サイト上に画像を配置する方法は2つある
+・imgmタグで画像を配置する方法
+・背景画像として要素に背景色のような形で画像を配置する方法
+　→背景画像として配置すると決められた枠のサイズに対して配置されるので、画像全体から枠のサイズ分切り取られた形で配置されるというイメージ
+　プロパティ　background-color　背景色
+　　　　　　　background-image　背景画像
+<div class="copy">のdivタグを適正な<h1>タイトルタグに変える
+→copyと言うところには元々タイトルが入れたかった　タイトル用のタグに変更
+<div class="visual">
+  <h1 class="copy">
+    楽しく習得。<br>　←改行したい部分には<br>タグ
+    もっと学習。
+  </h1>
+</div>
+VSコード上に黄色い四角い枠＝全角スペース
+インデントの場合は半角スペースはブラウザ上で無視されるが、全角のスペースは隙間として表示されレイアウトが崩れてしまう
+インデント（字下げ）は必ずタブか、半角スペースで！
+<h1>のhはheadingのh
+h1~6まである　<h1>がそのページで一番大きなタイトル <h2>が次に重要なタイトル　<h6>はあまり使わない
+数が大きくなるにつれて重要度が下がっていく　見出しのような感じ
+borderプロパティは枠線を確認する（枠がどのようになっているかを可視化する）ために入れたプロパティだったので削除してOK
+
+.visual{
+    height:400px; ←高さは400px
+    background: url("../images/top_bg.jpg") no-repeat center center;　
+→backgroundプロパティはbackground-imageやbackground-colorなどをまとめたもので、
+ショートハンドと呼ばれる、１個のプロパティで値が4つ指定できる、特殊なプロパティ（普通は1つずつ）
+no-repeat center centerは
+＝　no repeat:画像が枠より小さかったとしても連続して横に表示させない
+　　center center:最初のcenterは左右のセンター、次のデンターは、上下のセンター
+../はひとつ前のフォルダと言うこと
+    display: flex;　       
+    align-items: center;
+→display:flex; align-item: center;はセット
+}
+
+.copy{
+    color:#FFF;
+    margin-left:100px;　→margin 外側の余白
+    font:normal 32px/2em sans-serif;　
+→fontプロパティはいろんなfont設定のショートハンド（＝まとめたやつ）
+　font:文字のウェイト（文字の太さ）　文字のサイズ（px)/行間(文章の行間　em) 書体の種類
+}
